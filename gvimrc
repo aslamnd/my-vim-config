@@ -10,4 +10,4 @@ set lines=25 columns=100          " Window dimensions.
 
 set guioptions-=r                 " Don't show right scrollbar
 
-
+colorscheme monokai
