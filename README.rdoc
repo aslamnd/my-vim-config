@@ -1,2 +1,19 @@
 = My VIM Configurations
+My custom configuration for gVIM and VIM.
 
+# Usage
+
+1. Clone the repo.
+   
+   git://github.com/aslamnd/my-vim-config.git ~/.vim
+
+2. Symlink the .vimrc and .gvimrc files
+
+   ln -nfs ~/.vimrc /.vim/vimrc
+   
+   ln -nfs ~/.gvimrc /.vim/gvimrc
+
+That's it!
+
+
+   
