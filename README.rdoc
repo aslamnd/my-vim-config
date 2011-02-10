@@ -15,5 +15,10 @@ My custom configuration for gVIM and VIM.
 
 That's it!
 
+# Update plugins
 
+  cd ~/.vim
+
+  git submodule init
+  git submodule update
    
