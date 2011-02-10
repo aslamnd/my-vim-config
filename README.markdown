@@ -5,13 +5,13 @@ My custom configuration for gVIM and VIM.
 
 ### Clone the repo.
    
-   git://github.com/aslamnd/my-vim-config.git ~/.vim
+  git://github.com/aslamnd/my-vim-config.git ~/.vim
 
 ### Symlink the .vimrc and .gvimrc files
 
-   ln -nfs ~/.vimrc /.vim/vimrc
+  ln -nfs ~/.vimrc /.vim/vimrc
    
-   ln -nfs ~/.gvimrc /.vim/gvimrc
+  ln -nfs ~/.gvimrc /.vim/gvimrc
 
 That's it!
 
