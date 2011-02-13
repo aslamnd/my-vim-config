@@ -40,8 +40,8 @@ set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 " UNCOMMENT TO USE
-set tabstop=2                    " Global tab width.
-set shiftwidth=2                 " And again, related.
+set tabstop=3                    " Global tab width.
+set shiftwidth=3                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 
 set laststatus=2                  " Show the status line all the time
@@ -64,6 +64,10 @@ map <leader>tm :tabmove
 
 " Uncomment to use Jamis Buck's file opening plugin
 map <Leader>t :FuzzyFinderTextMate<Enter>
+
+"Clear the search highlighting by pressing the Escape key
+nnoremap <esc> :noh<return><esc>    
+
 
 " Controversial...swap colon and semicolon for easier commands
 "nnoremap ; :
