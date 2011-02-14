@@ -22,6 +22,9 @@ set wildmode=list:longest         " Complete files like a shell.
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 
+set smartindent
+set autoindent
+
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 
@@ -35,20 +38,21 @@ set title                         " Set the terminal's title
 
 set visualbell                    " No beeping.
 
+set splitbelow                    " Split window below the current window.
+
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
-" UNCOMMENT TO USE
 set tabstop=3                    " Global tab width.
 set shiftwidth=3                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 
 set laststatus=2                  " Show the status line all the time
+
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" Or use vividchalk
 colorscheme topfunky-light
 
 " Tab mappings.
@@ -69,6 +73,16 @@ map <Leader>t :FuzzyFinderTextMate<Enter>
 nnoremap <esc> :noh<return><esc>    
 
 
+"Shortcuts
+"Edit .vimrc file
+nmap ,ev :tabedit $MYVIMRC<cr>
+
+"Map : for save time
+nmap <space> :
+
+"Nerdtree toggle
+nmap ,nt :NERDTreeToggle<cr>
+
 " Controversial...swap colon and semicolon for easier commands
 "nnoremap ; :
 "nnoremap : ;
@@ -88,14 +102,18 @@ autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()
-    let p = '^\s*|\s.*\s|\s*$'
-      if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-            let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-                let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-                    Tabularize/|/l1
-                        normal! 0
-                            call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-                              endif
-                            endfunction
-      endif
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
 endfunction
+
+
+" Source the vimrc file after saving it
+if has("autocmd")
+   autocmd bufwritepost .vimrc source $MYVIMRC
+endif
