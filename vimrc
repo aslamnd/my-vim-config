@@ -83,6 +83,12 @@ nmap <space> :
 "Nerdtree toggle
 nmap ,nt :NERDTreeToggle<cr>
 
+" Run shell commands
+nmap ,sh :!<space>
+
+" Search and replace all
+nmap ,sr :%s/
+
 " Controversial...swap colon and semicolon for easier commands
 "nnoremap ; :
 "nnoremap : ;
