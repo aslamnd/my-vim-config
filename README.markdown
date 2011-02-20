@@ -9,9 +9,9 @@ My custom configuration for gVIM and VIM.
 
 ### Symlink the .vimrc and .gvimrc files
 
-    ln -nfs ~/.vimrc /.vim/vimrc
+    ln -nfs ~/.vim/vimrc ~/.vimrc 
    
-    ln -nfs ~/.gvimrc /.vim/gvimrc
+    ln -nfs ~/.vim/gvimrc ~/.gvimrc 
 
 That's it!
 
