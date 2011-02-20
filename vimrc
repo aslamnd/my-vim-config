@@ -11,49 +11,38 @@ runtime macros/matchit.vim        " Load the matchit plugin.
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
-
 set backspace=indent,eol,start    " Intuitive backspacing.
-
 set hidden                        " Handle multiple buffers better.
-
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
-
 set smartindent
 set autoindent
-
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
-
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
-
 set wrap                          " Turn on line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
-
 set title                         " Set the terminal's title
-
 set visualbell                    " No beeping.
-
 set splitbelow                    " Split window below the current window.
-
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
-
 set tabstop=3                    " Global tab width.
 set shiftwidth=3                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
-
 set laststatus=2                  " Show the status line all the time
 
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-colorscheme topfunky-light
+colorscheme monokai
+
+" Refector RSepc before each block
+vmap <Leader>bed "td?describe<CR>o<CR>before(:each) do<CR><ESC>"tp
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -66,7 +55,18 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-" Uncomment to use Jamis Buck's file opening plugin
+" Rails shortcuts
+map <leader>cc :! rake cucumber<cr>
+
+" GIT shortcuts
+map <leader>gi :! git init
+map <leader>gar :! git add remote origin 
+map <leader>ga :! git add .<cr>
+map <leader>gc :! git commit -am 
+map <leader>gph :! git push<cr>
+map <leader>gpl :! git pull<cr>
+
+" Jamis Buck's file opening plugin
 map <Leader>t :FuzzyFinderTextMate<Enter>
 
 "Clear the search highlighting by pressing the Escape key
