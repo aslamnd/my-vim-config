@@ -35,16 +35,26 @@ set tabstop=3                    " Global tab width.
 set shiftwidth=3                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 set laststatus=2                  " Show the status line all the time
+set guioptions-=L                " Hide scroll bar in the GUI
+set guioptions-=r                " Hide scroll bar in the GUI
+" set cursorline                   " Hightlight current line
+
+
+set omnifunc=csscomplete#CompleteCSS
 
 set shell=/bin/sh                " Use bash as the default shell - to solve RVM integreation problems
 
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
+
 colorscheme monokai
 
 " Refector RSepc before each block
 vmap <Leader>bed "td?describe<CR>o<CR>before(:each) do<CR><ESC>"tp
+
+" Map redo shortcut
+map <c>r :redo<cr>
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -58,15 +68,16 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 " Rails shortcuts
+map <leader>bi :! bundle install<cr>
 map <leader>cc :! rake cucumber<cr>
 
 " GIT shortcuts
-map <leader>gi :! git init
-map <leader>gar :! git add remote origin 
-map <leader>ga :! git add .<cr>
-map <leader>gc :! git commit -am 
-map <leader>gph :! git push<cr>
-map <leader>gpl :! git pull<cr>
+map ,gi :! git init<cr>
+map ,gra :! git remote add origin 
+map ,ga :! git add .<cr>
+map ,gc :! git commit -am<space>
+map ,gph :! git push<cr>
+map ,gpl :! git pull<cr>
 
 " Jamis Buck's file opening plugin
 map <Leader>t :FuzzyFinderTextMate<Enter>
