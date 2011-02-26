@@ -1,4 +1,10 @@
-" Copy or symlink to ~/.vimrc or ~/_vimrc.
+" -------------------------------------------------------------------
+" Maintained by   - Aslam Najeebdeen
+" Contact         - aslam@frontcube.com
+" URL             - http://aslamnajeebdeen.com
+" Source          - http://github.com/aslamnd/my-vim-config
+" Instructions    - Copy or symlink to ~/.vimrc or ~/_vimrc.
+" -------------------------------------------------------------------
 
 set nocompatible                  " Must come first because it changes other options.
 
@@ -40,7 +46,7 @@ set guioptions-=r                " Hide scroll bar in the GUI
 " set cursorline                   " Hightlight current line
 
 
-set omnifunc=csscomplete#CompleteCSS
+" set omnifunc=csscomplete#CompleteCSS
 
 set shell=/bin/sh                " Use bash as the default shell - to solve RVM integreation problems
 
@@ -69,15 +75,25 @@ map <leader>tm :tabmove
 
 " Rails shortcuts
 map <leader>bi :! bundle install<cr>
+map <leader>rg :! rails g 
+map <leader>rk :Rake<cr>
+map <leader>rd :! rake db:migrate<cr> 
+map <leader>rt :! rake db:test:clone<cr> 
+map <leader>rsi :! rails g rspec:install<cr>
+map <leader>ci :! rails g cucumber:install<cr>
+map <leader>rm :Rmodel<cr>
+
 map <leader>cc :! rake cucumber<cr>
 
 " GIT shortcuts
-map ,gi :! git init<cr>
-map ,gra :! git remote add origin 
-map ,ga :! git add .<cr>
-map ,gc :! git commit -am<space>
-map ,gph :! git push<cr>
-map ,gpl :! git pull<cr>
+map <leader>gi :! git init<cr>
+map <leader>gra :! git remote add origin 
+map <leader>ga :! git add .<cr>
+map <leader>gc :! git commit -am<space>
+map <leader>gph :! git push<cr>
+map <leader>gpl :! git pull<cr>
+map <leader>gst :! git status<cr>
+map <leader>gco :! git checkout<space> 
 
 " Jamis Buck's file opening plugin
 map <Leader>t :FuzzyFinderTextMate<Enter>
