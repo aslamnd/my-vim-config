@@ -93,10 +93,12 @@ map <leader>gc :! git commit -am<space>
 map <leader>gph :! git push<cr>
 map <leader>gpl :! git pull<cr>
 map <leader>gst :! git status<cr>
-map <leader>gco :! git checkout<space> 
+map <leader>go :! git checkout 
+map <leader>gb :! git branch<space>
+map <leader>gr :! git reset --hard ORIG_HEAD
 
 " Jamis Buck's file opening plugin
-map <Leader>t :FuzzyFinderTextMate<Enter>
+map <Leader>o :FuzzyFinderTextMate<Enter>
 
 "Clear the search highlighting by pressing the Escape key
 nnoremap <esc> :noh<return><esc>    
