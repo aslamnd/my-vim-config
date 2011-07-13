@@ -64,3 +64,6 @@
 [submodule "bundle/specky"]
 	path = bundle/specky
 	url = https://github.com/vim-scripts/Specky.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git

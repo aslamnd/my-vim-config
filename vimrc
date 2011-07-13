@@ -78,7 +78,7 @@ map <leader>bi :! bundle install<cr>
 map <leader>rg :! rails g 
 map <leader>rk :Rake<cr>
 map <leader>rd :! rake db:migrate<cr> 
-map <leader>rt :! rake db:test:clone<cr> 
+map <leader>rt :! rake db:test:prepare<cr> 
 map <leader>rsi :! rails g rspec:install<cr>
 map <leader>ci :! rails g cucumber:install<cr>
 map <leader>rm :Rmodel<cr>
@@ -103,6 +103,8 @@ map <Leader>o :FuzzyFinderTextMate<Enter>
 "Clear the search highlighting by pressing the Escape key
 nnoremap <esc> :noh<return><esc>    
 
+"Gundo key mapping
+nnoremap ,gu :GundoToggle<cr>
 
 "Shortcuts
 "Edit .vimrc file
@@ -112,7 +114,10 @@ nmap ,ev :tabedit $MYVIMRC<cr>
 nmap <space> :
 
 "Nerdtree toggle
-nmap ,nt :NERDTreeToggle<cr>
+nmap ,n :NERDTreeToggle<cr>
+
+"Buffer exploer toggle
+nmap ,bb :BufExplorer<cr>
 
 " Run shell commands
 nmap ,sh :!<space>

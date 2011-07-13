@@ -1,3 +1,5 @@
+## This repo is outdated. Checkout my new VIM awesomeness here: https://github.com/aslamnd/janus
+
 # My VIM Configurations
 My custom configuration for gVIM and VIM.
 
